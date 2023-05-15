@@ -1,0 +1,138 @@
+@{
+    ViewData["Title"] = "Booking";
+
+    if(ViewBag.acsses != null)
+	{
+		 Layout = "~/Views/Shared/_AdminLayout.cshtml";
+	}
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Booking</title>
+</head>
+
+<body>
+    <div class="book">
+    <div class="movie-cont">
+        <label> Movie:</label>
+        <select>
+            <option>Joker</option>
+            <option>Avengers Endgame</option>
+            <option>Shazam</option>
+            <option>Spider-Man Far From Home</option>
+            <option>John Wick 4</option>
+            <option>The Popes Exorcist</option>
+        </select>
+        <div class="date">
+            <label> Day:</label>
+            <input type="date"></input>
+            <label> Time:</label>
+            <input type="time"></input>
+            <br><br>
+            <label> Tickets:</label>
+            <input class="Tickets" type="number"></input>
+            <label> Price: 100egp</label>
+        </div>
+    </div>
+
+    <ul class="showcase">
+        <li><div class="Available"></div>Available</li>
+        <li><div class="Booked"></div>Booked</li>
+    </ul>
+
+    <div class="cont">
+        <div class="screen">screen</div>
+
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+        </div>
+        <div class="row">
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat "></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+        <div class="row">
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat sold"></div>
+            <div class="seat sold"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+            <div class="seat"></div>
+        </div>
+    </div>
+
+    <input type="submit" value="Book" class="submit">
+
+</div>
+</body>
+</html>

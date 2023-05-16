@@ -156,6 +156,7 @@ body {
     border: none;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .movies {
     padding: 4rem 2rem;
 }
@@ -238,9 +239,8 @@ a {
     background-repeat: no-repeat;
 }
 /* Sign In View*/
-.sign_in_form {
+.sign_in_form, .login-form {
     background-color: #f2f2f2;
-    padding: 100px;
     border-radius: 5px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
     margin: 150px auto;
@@ -249,31 +249,6 @@ a {
     flex-direction: column;
 }
 
-.form_label {
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-form_input {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
-}
-
-.signin_btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-button[type="submit"]:hover {
-    background-color: #3e8e41;
-}
 /*Contact Form View*/
 .contact-form {
     padding: 10px;
@@ -331,8 +306,9 @@ button[type="submit"]:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    margin: 0;
+    width: 100%;
+    border-radius: 10px;
+    margin:100px auto 100px auto ;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -341,7 +317,7 @@ button[type="submit"]:hover {
     color: #ffcc00;
 }
 
-.cont{
+.cont {
     margin: 20px;
 }
 
@@ -388,7 +364,8 @@ button[type="submit"]:hover {
     list-style-type: none;
     display: flex;
 }
- .showcase li {
+
+    .showcase li {
         display: flex;
         align-items: center;
         margin: 0 10px;
@@ -414,6 +391,7 @@ button[type="submit"]:hover {
 .row {
     display: flex;
 }
+
 .Tickets {
     width: 15%;
 }
@@ -430,9 +408,11 @@ button[type="submit"]:hover {
 
 .submit {
     background-color: #ffcc00;
+    border-radius:5px;
     font-size: 20px;
     color: #333;
 }
-.submit:hover {
+
+    .submit:hover {
         cursor: pointer;
     }

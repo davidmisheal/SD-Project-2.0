@@ -5,6 +5,7 @@ namespace Project.Data
     public class ApplicationDBcontext : DbContext
     {
         public ApplicationDBcontext(DbContextOptions<ApplicationDBcontext> options) : base(options) { }
+
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         public DbSet<Seat> Seats { get; set; }

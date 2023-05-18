@@ -1,9 +1,11 @@
-﻿@{
+﻿@model IEnumerable<Project.Models.Movie>
+
+@{
 	ViewData["Title"] = "Index";
-	
-	if(ViewBag.acsses!= null)
+
+	if (ViewBag.acsses != null)
 	{
-		 Layout = "~/Views/Shared/_AdminLayout.cshtml";
+		Layout = "~/Views/Shared/_AdminLayout.cshtml";
 	}
 }
 <div class="search-container">
@@ -36,92 +38,26 @@
 		</select>
 		<button type="submit">Search</button>
 	</form>
-
 </div>
 <section class="movies">
 	<h2>Now Showing</h2>
-	<div class="movie-container">
-		<div class="movie">
-			<img src="~/Images/joker-movie-poster-sm.jpg" alt="Movie 1" width=150px height=200px>
-			<div class="overlay">
-				<h3>Joker</h3>
-				<p>Crime,Drama,Thriller</p>
-				<ul>
-					<li class="time">12:00 AM</li>
-					<li class="time">12:00 PM</li>
-					<li class="time">09:00 PM</li>
-				</ul>
-				<a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
-			</div>
-		</div>
-		<div class="movie">
-			<img src="~/Images/avengers-endgame-movie-poster-sm.jpg" alt="Movie 2" width=150px height=200px>
-			<div class="overlay">
-				<h3>Avengers Endgame</h3>
-				<p>Action, Adventure, Drama,Sci-Fic</p>
-				<ul>
-					<li class="time">12:00 AM</li>
-					<li class="time">09:00 AM</li>
-					<li class="time">06:00 PM</li>
-				</ul>
-				<a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
-			</div>
-		</div>
-		<div class="movie">
-			<img src="~/Images/shazam-movie-poster.jpg" alt="Movie 3" width=150px height=200px>
-			<div class="overlay">
-				<h3>Shazam</h3>
-				<p>Action, Sci-Fi,Adventure,Comedy</p>
-				<ul>
-					<li class="time">09:00 AM</li>
-					<li class="time">12:00 PM</li>
-					<li class="time">06:00 PM</li>
-				</ul>
-				<a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
-			</div>
-		</div>
+	@foreach (var item in Model)
+	{
 		<div class="movie-container">
 			<div class="movie">
-				<img src="~/Images/spider-man-far-from-home-international-movie-poster-md.jpg" alt="Movie 4" width=150px height=200px>
+				<img src="~/Images/@item.Movie_Pic" alt="Movie 1" width=150px height=200px>
 				<div class="overlay">
-					<h3>Spider-Man Far From Home</h3>
-					<p>Action, Sci-Fi,Adventure,Comedy</p>
+					<h3>@item.Title</h3>
+					<p>@item.Genres</p>
 					<ul>
-						<li class="time">12:00 AM</li>
-						<li class="time">03:00 PM</li>
-						<li class="time">09:00 PM</li>
-					</ul>
-					<a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
-				</div>
-			</div>
-			<div class="movie">
-				<img src="~/Images/10366206.jpg" alt="Movie 5" width=150px height=200px>
-				<div class="overlay">
-					<h3>John Wick 4</h3>
-					<p>Action, Sci-Fi,Adventure,Comedy</p>
-					<ul>
-						<li class="time">09:00 AM</li>
-						<li class="time">03:00 PM</li>
-						<li class="time">06:00 PM</li>
-					</ul>
-					<a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
-				</div>
-			</div>
-			<div class="movie">
-				<img src="~/Images/13375076.jpg" alt="Movie 6" width=150px height=200px>
-				<div class="overlay">
-					<h3>The Popes Exorcist</h3>
-					<p>Action, Sci-Fi,Adventure,Comedy</p>
-					<ul>
-						<li class="time">12:00 PM</li>
-						<li class="time">03:00 PM</li>
-						<li class="time">09:00 PM</li>
+						<li class="time">@item.Date</li>
 					</ul>
 					<a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
 				</div>
 			</div>
 		</div>
-	</div>
+	}
 </section>
+
 
 

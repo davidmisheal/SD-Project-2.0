@@ -22,6 +22,9 @@
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Genre.GenreType)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Duration)
             </th>
             <th>
@@ -41,6 +44,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.GenreType)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Duration)

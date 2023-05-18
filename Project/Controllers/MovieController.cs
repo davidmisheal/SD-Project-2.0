@@ -55,6 +55,7 @@ namespace Project.Controllers
         // GET: Movie/Create
         public IActionResult Create()
         {
+            ViewBag.GenreType = new SelectList(_context.Genres, "Id", "GenreType");
             return View();
         }
 

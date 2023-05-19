@@ -130,9 +130,17 @@
             <div class="seat"></div>
         </div>
     </div>
+    <a class="btn">Book</a>
+    </div>   
+    <script>
+    const cont = document.querySelector('.cont');
+        cont.addEventListener('click', (e) => {
+            if (e.target.classList.contains('seat') && !e.target.classList.contains('booked')) {
+                e.target.classList.toggle('selected');
 
-    <input type="submit" value="Book" class="submit">
-
-</div>
+                updateSelectedCount();
+            }
+        });
+    </script>
 </body>
 </html>

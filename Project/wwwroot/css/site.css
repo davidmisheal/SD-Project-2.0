@@ -389,7 +389,6 @@ a {
     border-radius: 50%;
 }
 
-
 .row {
     display: flex;
 }
@@ -408,16 +407,11 @@ a {
     color: #333;
 }
 
-.submit {
+.selected {
     background-color: #ffcc00;
-    border-radius:5px;
-    font-size: 20px;
-    color: #333;
 }
 
-    .submit:hover {
-        cursor: pointer;
-    }
+
 /*Movie Index Table*/
 .table{
     margin:100px auto 100px auto;

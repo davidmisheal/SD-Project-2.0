@@ -22,13 +22,23 @@
 		</nav>
 				
 	
-		<form style="padding-left=1400px;margin-left:1400px" action="Account/Login">
-			<button class="signin-button">Login</button>
-		</form>
+		@{
+				if (ViewBag.acsses==null)
+				{
+					<form action="Account/Login">
+				<button class="signin-button">Login</button>
+			</form>
 
-		<form action="Account/signin">
-			<button class="signin-button">Sign In</button>
-		</form>
+			<form action="Account/signin">
+				<button class="signin-button">Sign Up</button>
+			</form>
+				}
+				else{
+					<form action="Account/Logout">
+				<button class="signin-button">LogOut</button>
+			</form>
+				}
+			}
 
 	</header>
 	<div class="container">

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Project.Data;
 using Project.Models;
 
@@ -6,6 +7,7 @@ namespace Project.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly SignInManager<IdentityUser> _signInManager;
         public IActionResult Index()
         {
             return View();
@@ -53,7 +55,7 @@ namespace Project.Controllers
                 {
                     if (user.Password == Password)
                     {
-                        HttpContext.Session.SetString("Email",user.Email);
+                        HttpContext.Session.SetString("acsses", user.Email);
                         return RedirectToAction("Index", "Main");
                     }
 
@@ -67,7 +69,7 @@ namespace Project.Controllers
                     var admin = _dbcontext.Admins.FirstOrDefault(u => u.Email == Email);
                     if (admin!= null && admin.Password == Password)
                     {
-                        HttpContext.Session.SetString("acsses", admin.Email);
+                        HttpContext.Session.SetString("acsses", "Admin");
                         return RedirectToAction("Index", "Main");
                     }
                     else
@@ -79,7 +81,13 @@ namespace Project.Controllers
             return View();
 
         }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Main");
+        }
     }
+    
 }
 
 

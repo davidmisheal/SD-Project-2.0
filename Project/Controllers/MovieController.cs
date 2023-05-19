@@ -26,7 +26,7 @@ namespace Project.Controllers
         // GET: Movie
         public async Task<IActionResult> Index()
         {
-            ViewBag.acssess = HttpContext.Session.GetString("acsses");
+            ViewBag.acsses = HttpContext.Session.GetString("acsses");
             return _context.Movies != null ? 
                           View(await _context.Movies.ToListAsync()) :
                           Problem("Entity set 'ApplicationDBcontext.Movies'  is null.");

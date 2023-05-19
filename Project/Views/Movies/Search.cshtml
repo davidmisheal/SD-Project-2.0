@@ -2,7 +2,7 @@
 
 @{
 	ViewData["Title"] = "Search Results for " + ViewBag.searchTerm;
-	if (ViewBag.acssess != null)
+	if (ViewBag.acssess == "Admin")
 	{
 		Layout = "~/Views/Shared/_AdminLayout.cshtml";
 	}

@@ -36,9 +36,12 @@ namespace Project.Controllers
             return View();
         }
 
-        public IActionResult Booking()
+        public async Task<IActionResult> Booking()
         {
             ViewBag.acsses = HttpContext.Session.GetString("acsses");
+            return _context.Movies != null ?
+                          View(await _context.Movies.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDBcontext.Movies'  is null.");
             var Email = HttpContext.Session.GetString("Email");
             if (string.IsNullOrEmpty(Email))
             {

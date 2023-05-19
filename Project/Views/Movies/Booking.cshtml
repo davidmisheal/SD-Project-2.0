@@ -1,3 +1,4 @@
+@model IEnumerable<Project.Models.Movie>
 @{
     ViewData["Title"] = "Booking";
 
@@ -17,12 +18,10 @@
     <div class="movie-cont">
         <label> Movie:</label>
         <select>
-            <option>Joker</option>
-            <option>Avengers Endgame</option>
-            <option>Shazam</option>
-            <option>Spider-Man Far From Home</option>
-            <option>John Wick 4</option>
-            <option>The Popes Exorcist</option>
+            @foreach (var item in Model)
+            {
+                <option>@item.Title</option>
+            }
         </select>
         <div class="date">
             <label> Day:</label>

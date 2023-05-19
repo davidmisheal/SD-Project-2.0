@@ -1,46 +1,47 @@
 ﻿@model IEnumerable<Project.Models.Movie>
 
 @{
-	ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index";
 
-	if (ViewBag.acsses != null)
-	{
-		Layout = "~/Views/Shared/_AdminLayout.cshtml";
-	}
+    if (ViewBag.acsses != null)
+    {
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
 }
 <div class="search-container">
-	<form>
-		<input type="text" name="search-bar" placeholder="Search...">
-		<select class="search-select">
-			@{
-				foreach (var item in Model.Select(item=>item.Genre1).Distinct())
-				{
-					<option>@item</option>
-				}
-			}
-		</select>
-		<button asp-controller="movies" asp-action="Search" type="submit">Search</button>
-	</form>
+    <form action="/search" method="post">
+        <input type="text" name="searchTerm" placeholder="Search..." >
+        <select name="filter" class="search-select">
+            @{
+                <option></option>
+                foreach (var item in Model.Select(item=>item.Genre1).Distinct())
+                {
+                    <option >@item</option>
+                }
+            }
+        </select>
+        <button asp-controller="movies" asp-action="Search" type="submit">Search</button>
+    </form>
 </div>
 <section class="movies">
-	<h2>Now Showing</h2>
-	@foreach (var item in Model)
-	{
-		<div class="movie-container">
-			<div class="movie">
-				<img src="~/Images/@item.Movie_Pic" alt="Movie 1" width=150px height=200px>
-				<div class="overlay">
-					<h3>@item.Title</h3>
-					<p>@item.Genre1</p>
-					<ul>
-						<li class="time">@item.Date</li>
-					</ul>
-					<a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
-				</div>
-			</div>
-		</div>
-	}
+    <h2>Now Showing</h2>
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+        {
+            <div class="movie-container">
+                <div class="movie">
+                    <img src="~/Images/@item.Movie_Pic" alt="Movie 1" width=150px height=200px>
+                    <div class="overlay">
+                        <h3>@item.Title</h3>
+                        <p>@item.Genre1</p>
+                        <ul>
+                            <li class="time">@item.Date</li>
+                        </ul>
+                        <a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
 </section>
-
-
-

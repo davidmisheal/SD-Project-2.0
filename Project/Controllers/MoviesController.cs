@@ -46,7 +46,22 @@ namespace Project.Controllers
             }
             return View();
         }
-       
+        public async Task<IActionResult> Search(string searchTerm, string genre)
+        {
+            ViewBag.searchTerm = searchTerm;
+            ViewBag.filter = genre;
+            if (searchTerm == null && genre == null)
+            {
+                return RedirectToAction("Index");
+            }
+            ViewBag.acssess = HttpContext.Session.GetString("acsses");
+            return _context.Movies != null ?
+                          View(await _context.Movies.ToListAsync()) :
+                          Problem("Entity set 'ApplicationDBcontext.Movies'  is null.");
+            return View();
+        }
+
+
 
     }
 }

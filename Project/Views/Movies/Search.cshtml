@@ -14,22 +14,6 @@
 	{
 		foreach (var item in Model)
 		{
-			if (ViewBag.searchTerm == null && item.Genre1==ViewBag.filter)
-			{
-				<div class="movie-container">
-					<div class="movie">
-						<img src="~/Images/@item.Movie_Pic" alt="@item.Title" width="150" height="200">
-						<div class="overlay">
-							<h3>@item.Title</h3>
-							<p>@item.Genre1</p>
-							<ul>
-								<li class="time">@item.Date</li>
-							</ul>
-							<a asp-controller="movies" asp-action="Booking" class="btn">Book Now</a>
-						</div>
-					</div>
-				</div>
-			}
 			if (item.Title.ToLower().Contains(ViewBag.searchTerm.ToLower()))
 			{
 				<div class="movie-container">

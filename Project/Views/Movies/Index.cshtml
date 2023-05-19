@@ -11,15 +11,6 @@
 <div class="search-container">
     <form action="/search" method="post">
         <input type="text" name="searchTerm" placeholder="Search..." >
-        <select name="filter" class="search-select">
-            @{
-                <option></option>
-                foreach (var item in Model.Select(item=>item.Genre1).Distinct())
-                {
-                    <option >@item</option>
-                }
-            }
-        </select>
         <button asp-controller="movies" asp-action="Search" type="submit">Search</button>
     </form>
 </div>

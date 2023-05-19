@@ -11,8 +11,11 @@ namespace Project.Models
         [Required(ErrorMessage = "Title is Required")]
         [DisplayName("Movie Title")]
         public string Title { get; set; }
+        [Required(ErrorMessage = "Genre is Required")]
+        [DisplayName("Movie Genre")]
+        public string Genre1 { get; set; }
         [Required(ErrorMessage = "Duration is Required")]
-        [DisplayName("Movie Duaration")]
+        [DisplayName("Movie Duration")]
         public int Duration { get; set; }
         [Required(ErrorMessage = "Date is Required")]
         [DisplayName("Movie Date")]

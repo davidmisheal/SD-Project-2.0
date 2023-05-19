@@ -103,6 +103,10 @@ namespace Project.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
+                    b.Property<string>("Genre1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("GenreID")
                         .HasColumnType("int");
 

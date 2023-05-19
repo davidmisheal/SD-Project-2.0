@@ -64,7 +64,7 @@ namespace Project.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Movie_Id,Title,Duration,Date,Rating")] Movie movie, IFormFile img_file)
+        public async Task<IActionResult> Create([Bind("Movie_Id,Genre1,Title,Duration,Date,Rating")] Movie movie, IFormFile img_file)
         {
 			
 			// to create Images folder in the project Path.

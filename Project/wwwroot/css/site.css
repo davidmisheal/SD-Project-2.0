@@ -170,12 +170,16 @@ body {
 .movie-container {
     display: inline-block;
 }
-
-.movie {
-    width: 300px;
-    margin: 1rem;
-    position: center;
-}
+    .movie-container p {
+        text-transform: capitalize;
+        opacity: 0.5;
+        
+    }
+    .movie {
+        width: 300px;
+        margin: 1rem;
+        position: center;
+    }
 
 .container {
     max-width: 100%;

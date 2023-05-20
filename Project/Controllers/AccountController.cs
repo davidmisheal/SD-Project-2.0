@@ -29,17 +29,27 @@ namespace Project.Controllers
         [HttpPost]
         public IActionResult Signin(User user)
         {
-            
+            var isEmailExist = _dbcontext.Users.Any(u => u.Email == user.Email);
             if (ModelState.IsValid)
             {
-                _dbcontext.Users.Add(user);
-                _dbcontext.SaveChanges();
-                return RedirectToAction("Login", "Account");
+                if (isEmailExist)
+                {
+                    // Add an error message to the view model.
+                    ModelState.AddModelError("Email", "This email address is already registered.");
+				}
+				else
+				{
+                    _dbcontext.Users.Add(user);
+                    _dbcontext.SaveChanges();
+                    return RedirectToAction("Login", "Account");
+                }
+               
             }
             return View(user);
+
         }
 
-       
+
         [HttpGet]
         public IActionResult Login()
         {
@@ -61,7 +71,7 @@ namespace Project.Controllers
 
                     else
                     {
-                        ModelState.AddModelError("", "Invalid email or password");
+                        ModelState.AddModelError("Password", "Invalid email or password");
                     }
                 }
                 else if (user == null)
@@ -74,7 +84,7 @@ namespace Project.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError("", "Invalid email or password");
+                        ModelState.AddModelError("Password", "Invalid email or password");
                     }
                 }      
             }

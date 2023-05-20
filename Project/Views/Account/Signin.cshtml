@@ -24,6 +24,7 @@
     <div class="form-group">
     <label for="Email">Email address</label>
     <input type="email" class="form-control" id="Email" name="Email" placeholder="Enter email" required >
+    <span style="color:red;">@Html.ValidationMessageFor(x => x.Email)</span>
     </div>
 
 
@@ -45,5 +46,3 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-
-

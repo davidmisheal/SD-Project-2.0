@@ -25,12 +25,12 @@
         </select>
         <div class="date">
             <label> Day:</label>
-            <input type="date"></input>
+            <input type="date">
             <label> Time:</label>
-            <input type="time"></input>
+            <input type="time">
             <br><br>
             <label> Tickets:</label>
-            <input class="Tickets" type="number"></input>
+            <input class="Tickets" type="number">
             <label> Price: 100egp</label>
         </div>
     </div>
@@ -129,15 +129,13 @@
             <div class="seat"></div>
         </div>
     </div>
-    <a class="btn">Book</a>
+    <a class="btn" type="submit">Book</a>
     </div>   
     <script>
     const cont = document.querySelector('.cont');
         cont.addEventListener('click', (e) => {
             if (e.target.classList.contains('seat') && !e.target.classList.contains('booked')) {
                 e.target.classList.toggle('selected');
-
-                updateSelectedCount();
             }
         });
     </script>
